@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/services.dart';
@@ -47,6 +46,11 @@ class PageAnimator extends HookWidget {
 
   final _switcherAnimator = const HorizontalSimpleAnimator();
 
+  /// {@template PageAnimator.enableImmersiveSwitch}
+  /// Whether to enable immersive mode switching. If null, defaults to true.
+  /// {@endtemplate}
+  final bool enableImmersiveSwitch;
+
   PageAnimator({
     super.key,
     required this.children,
@@ -58,6 +62,7 @@ class PageAnimator extends HookWidget {
     this.onDragEnd,
     this.onDragAnimationStart,
     this.onDragAnimationEnd,
+    this.enableImmersiveSwitch = true,
   });
 
   double _addAndClampOffset(double startPageOffset, double offset) {
@@ -210,8 +215,6 @@ class PageAnimator extends HookWidget {
 
       return transitionTween;
     });
-
-    final enableImmersiveSwitch = Platform.isIOS;
 
     if (!enableImmersiveSwitch) {
       useEffect(() {

@@ -7,6 +7,7 @@ A Flutter package that provides smooth page transitions and animations with cust
 - Multiple animation types for page transitions, switchable in realtime
 - Infinite scrolling in both directions, with ability to set bounds in realtime
 - Animated switcher - tap on a page, and it will zoom out, similar to Kindle reader
+- Immersive mode support
 
 ## Animation Types
 
@@ -65,6 +66,7 @@ PageAnimator(
   children: [
     // Your page widgets here
   ],
+  enableImmersiveSwitch: true,
 )
 ```
 
@@ -124,6 +126,7 @@ class _MyPageState extends State<MyPage> {
           for (final page in List.generate(3, (index) => index))
             _buildPage(page),
         ],
+        enableImmersiveSwitch: true,
       ),
     );
   }
@@ -157,3 +160,16 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Parameters
+
+- `children`: List of widgets to display as pages
+- `onPageChanged`: Callback when page is changed
+- `leftMostIndex`: The first page user can go to
+- `rightMostIndex`: The last page user can go to
+- `controller`: PageAnimatorController instance
+- `enableImmersiveSwitch`: Optional boolean that controls whether to enable immersive mode while switcher is inactive, and automatically disable it when user enters switcher. If not specified, defaults to true.
+- `onDragStart`: Optional callback when drag starts
+- `onDragEnd`: Optional callback when drag ends
+- `onDragAnimationStart`: Optional callback when animation starts
+- `onDragAnimationEnd`: Optional callback when animation ends

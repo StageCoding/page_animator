@@ -1,6 +1,8 @@
 name: page_animator
-description: A Flutter package that provides smooth page transitions and animations with customizable effects. Perfect for creating engaging user interfaces with horizontal page navigation.
-version: 1.0.0
+description: A Flutter package that provides smooth page transitions and
+  animations with customizable effects. Perfect for creating engaging user
+  interfaces with horizontal page navigation.
+version: 1.0.1
 homepage: https://github.com/StageCoding/page_animator
 repository: https://github.com/StageCoding/page_animator.git
 issue_tracker: https://github.com/StageCoding/page_animator/issues
@@ -12,14 +14,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_hooks: ^0.20.5
+  flutter_hooks: ^0.21.2
 
 dev_dependencies:
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
 
 flutter:
+
 topics:
   - animation
   - ui

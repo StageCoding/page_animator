@@ -55,7 +55,7 @@ class VerticalFadeAnimator extends Animator {
                           boxShadow: [
                             if (yPos > -0.99)
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
+                                color: Colors.black.withAlpha(51),
                                 spreadRadius: 10,
                                 blurRadius: 20,
                                 offset: const Offset(
@@ -67,8 +67,10 @@ class VerticalFadeAnimator extends Animator {
                       ),
                       Container(
                         color: yPos > 0 && yPos <= 1
-                            ? Colors.black.withOpacity(
-                                max(0.0, (1 - pageOffset.value % 1) * 0.3))
+                            ? Colors.black.withAlpha(
+                                (max(0.0, (1 - pageOffset.value % 1) * 0.3) *
+                                        255)
+                                    .toInt())
                             : null,
                         child: child,
                       ),
