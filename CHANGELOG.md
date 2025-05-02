@@ -1,4 +1,4 @@
-## [1.0.1]
+## 1.0.1
 
 - Immersive mode support with `enableImmersiveSwitch` parameter
 
