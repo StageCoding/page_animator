@@ -1,0 +1,4 @@
+# melos_managed_dependency_overrides: page_animator
+dependency_overrides:
+  page_animator:
+    path: ..
